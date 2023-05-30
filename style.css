@@ -1,0 +1,267 @@
+* {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Comienzo de estilo del menú del Header */
+
+header {
+    background-color: white;
+    top: 0;
+    z-index: 2;
+    width: 100vw;
+}
+
+header section {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-areas:    "imagen imagen imagen"
+                            "menu1 menu3 menu2";
+}
+
+    /* Inicio Grid Areas Header */
+    .header__nav--menu1{
+        grid-area: menu1;
+    }
+
+    .header__nav--menu2{
+        grid-area: menu2;
+    }
+
+    .header__nav--menu.mobile{
+        grid-area: menu3;
+    }
+
+    .img-header{
+        grid-area: imagen;
+    }
+
+    /* Fin Grid Areas Header */
+
+header nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+header li {
+    padding-left: 10px;
+    padding-right: 10px;
+    list-style-type: none;
+}
+
+header li a {
+    text-decoration: none;
+    color: black;
+}
+
+.img-header {
+    display: flex;
+}
+
+@media (min-width: 768px){
+    header {
+        position: sticky;
+    }
+}
+
+@media (min-width: 768px){
+    header section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .header__nav--menu.mobile ul li {
+        display: none;
+    }
+}
+
+/* Fin de estilo del menú del header */
+
+/* Inicio estilo formulario de consulta de disponibilidad. */
+
+.index-form {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .index-form {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 65px;
+        margin: 10px 0 10px 0;
+    }
+}
+
+.index-form div {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 10px 5px 10px;
+    border-style: solid;
+    border-width: thin;
+    width: 25%;
+    align-items: center;
+}
+
+#check-out {
+    border-left: 0;
+    border-right: 0;
+}
+
+#peoples {
+    border-right: 0;
+}
+
+#boton-consultar {
+    background-color: aquamarine;
+    width: 100%;
+    height: 100%;
+    font-size: 130%;
+    margin: 0;
+    padding: 0;
+}
+
+#boton-consultar:hover {
+    font-weight: 600;
+}
+
+.index-form label {
+    display: flex;
+    align-items: flex-start;
+}
+
+.index-form input {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border: none;
+    /* margin-top: 10px; */
+    width: 100%;
+    height: 70%;
+}
+
+/* Fin estilo formulario de consulta de disponibilidad. */
+
+/* Inicio estilo main. */
+
+.indexmain {
+    display: grid;
+    grid-template-columns: 1fr;
+    position: relative;
+    font-size: 1em;
+    width: 100vw;
+}
+
+.indexmain__img--outdoor {
+    width: 100%;
+}
+
+.indexmain__div--information {
+    position: absolute;
+    /* bottom: 20em; */
+    left: 2em;
+    color: white;
+}
+
+.indexmain__p--phone {
+    margin-bottom: 0;
+}
+
+.indexmain__a--phone {
+    text-decoration: none;
+    color: white;
+}
+
+.indexmain__section{
+    margin-left: 5em;
+}
+
+.indexmain__section--article {
+    text-align: justify;
+    width: 95%;
+}
+
+
+
+/* Inicio Estilo Footer */
+
+.footer-container{
+    display: flex;
+    justify-content: center;
+}
+
+.footer__div--bloque1{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__bloque1--title{
+    font-size: 150%;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+}
+
+footer ul p {
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .footer-container {
+    /* width: 100vw; */
+    display: grid;
+    }
+}
+
+@media (min-width: 768px) {
+    .footer__div--container{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-template-areas: "bloque1 bloque2 bloque3";
+        column-gap: 5px;
+        justify-items: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .footerlogo {
+        display: none;
+    }
+}
+
+/* Inicio Grid Areas */
+
+.footer__div--bloque1{
+    grid-area: bloque1;
+}
+
+.footer__div--bloque2{
+    grid-area: bloque2;
+}
+
+.footer__div--bloque3{
+    grid-area: bloque3;
+}
+
+/* Fin Grid Areas */
