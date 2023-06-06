@@ -297,7 +297,6 @@ header li a {
 }
 
 .reservarmain__section--form {
-    /* justify-items: center; */
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -305,9 +304,6 @@ header li a {
 }
 
 .reservarmain__form {
-    /* display: flex;
-    flex-direction: column; */
-    width: 50vw;
     border-style: solid;
     border-color: gray;
     border-width: 1px;
@@ -425,22 +421,9 @@ header li a {
         margin: 0;
     }
 
-    /* .reservarmain__form--div {
-        display: grid;
-        border-style: solid;
-        border-color: gray;
-        border-width: 1px;
-        grid-template-columns: 1fr 1fr 1fr;
-        /* grid-template-rows: repeat (6, 50px); */
-    /*    grid-template-areas:
-            "nombre nombre nombre"
-            "email email email"
-            "celular cantidad grupo"
-            "ingreso salida none"
-            "peticiones peticiones peticiones"
-            "terms autoriced none"
-            "enviar limpiar none";
-    } */
+    .reservarmain__form {
+        width: 50vw;
+    }
 }
 
 /* Fin estilo main */
