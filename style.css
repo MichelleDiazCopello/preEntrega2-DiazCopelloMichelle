@@ -10,37 +10,21 @@ header {
     background-color: white;
     top: 0;
     z-index: 2;
-    width: 100vw;
 }
 
 header section {
     display: grid;
+    margin: 0 0 10px 0;
     justify-items: center;
-    grid-template-columns: 1fr auto 1fr;
-    grid-template-areas:    "imagen imagen imagen"
-                            "menu1 menu3 menu2";
+    align-items: center;
+    row-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "imagen imagen imagen imagen imagen"
+        "inicio ofertas reservar unidades servicios";
 }
 
-    /* Inicio Grid Areas Header */
-    .header__nav--menu1{
-        grid-area: menu1;
-    }
-
-    .header__nav--menu2{
-        grid-area: menu2;
-    }
-
-    .header__nav--menu.mobile{
-        grid-area: menu3;
-    }
-
-    .img-header{
-        grid-area: imagen;
-    }
-
-    /* Fin Grid Areas Header */
-
-header nav ul {
+header section ul {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -49,8 +33,6 @@ header nav ul {
 }
 
 header li {
-    padding-left: 10px;
-    padding-right: 10px;
     list-style-type: none;
 }
 
@@ -63,43 +45,75 @@ header li a {
     display: flex;
 }
 
+.header__section--reservar {
+    display: grid;
+    margin: 0 0 10px 0;
+    justify-items: center;
+    align-items: center;
+    row-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "imagen imagen imagen imagen"
+        "inicio ofertas unidades servicios";
+}
+
+.html-reservar__section--reservar {
+    display: none;
+}
+
+    /* Inicio Grid Areas Header */
+
+    .img-header{
+        grid-area: imagen;
+    }
+
+    .section__li--inicio{
+        grid-area: inicio;
+    }
+
+    .section__li--ofertas{
+        grid-area: ofertas;
+    }
+
+    .section__li--unidades{
+        grid-area: unidades;
+    }
+
+    .section__li--servicios{
+        grid-area: servicios;
+    }
+
+    .section__li--reservar{
+        grid-area: reservar;
+    }
+
+/* Medias Queries Header Section */
+
 @media (min-width: 768px){
     header {
         position: sticky;
     }
-}
 
-@media (min-width: 768px){
     header section {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
+        display: grid;
+        margin-bottom: 5px;
+        justify-items: center;
         align-items: center;
+        row-gap: 10px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "inicio ofertas imagen unidades servicios";
     }
-}
 
-@media (min-width: 768px) {
-    .header__nav--menu.mobile ul li {
+    .section__li--reservar{
         display: none;
     }
 }
-
-/* Fin de estilo del menú del header */
 
 /* Inicio estilo formulario de consulta de disponibilidad. */
 
 .index-form {
     display: none;
-}
-
-@media (min-width: 768px) {
-    .index-form {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        height: 65px;
-        margin: 10px 0 10px 0;
-    }
 }
 
 .index-form div {
@@ -144,21 +158,37 @@ header li a {
     align-items: flex-end;
     justify-content: center;
     border: none;
-    /* margin-top: 10px; */
     width: 100%;
     height: 70%;
 }
 
+/* Medias Queries Formulario */
+
+@media (min-width: 768px) {
+    .index-form {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 65px;
+        margin: 10px 0 10px 0;
+    }
+}
+
 /* Fin estilo formulario de consulta de disponibilidad. */
+
+/* Fin de estilo del menú del header */
 
 /* Inicio estilo main. */
 
 .indexmain {
     display: grid;
     grid-template-columns: 1fr;
-    position: relative;
     font-size: 1em;
-    width: 100vw;
+}
+
+.indexmain__section--information{
+    display: grid;
+    position: relative;
 }
 
 .indexmain__img--outdoor {
@@ -166,10 +196,13 @@ header li a {
 }
 
 .indexmain__div--information {
+    display: flex;
+    flex-direction: column;
     position: absolute;
-    /* bottom: 20em; */
-    left: 2em;
     color: white;
+    align-self: flex-end;
+    margin-bottom: 2em;
+    font-size: 70%;
 }
 
 .indexmain__p--phone {
@@ -181,22 +214,243 @@ header li a {
     color: white;
 }
 
-.indexmain__section{
-    margin-left: 5em;
+.indexmain__section--description {
+    margin:0 1em 2em 1em;
 }
 
 .indexmain__section--article {
     text-align: justify;
-    width: 95%;
 }
 
+.section__h2--title {
+    text-align: left;
+    margin-bottom: 1em;
+}
 
+.ofertasmain {
+    display: grid;
+}
+
+.ofertasmain__a--2x1 {
+    text-decoration: none;
+    color: black;
+    margin: 1em;
+    border-style: solid;
+    border-width: thin;
+}
+
+.ofertasmain__a--30off {
+    text-decoration: none;
+    color: black;
+    margin: 1em;
+    border-style: solid;
+    border-width: thin;
+}
+
+.img-ofertasmain {
+    width: 100%;
+}
+
+.ofertasmain__div {
+    padding: 5% 5% 2% 5%;
+}
+
+.ofertasmain__span--title {
+    font-size: 100%;
+    font-weight: 600;
+}
+
+.ofertasmain__span--description {
+    font-size: 70%;
+    margin: 0;
+}
+
+.reservarmain {
+    display: grid;
+    margin: 1%;
+}
+
+.reservarmain__p--title {
+    font-size: 150%;
+    font-weight: 600;
+    padding: 1% 0 1% 0;
+}
+
+.reservarmain__p--description {
+    text-align: justify;
+    padding: 1% 0 1% 0;
+}
+
+.reservarmain__section--ul {
+    margin-left: 2%;
+}
+
+.reservarmain__section--ul li {
+    display: flex;
+    flex-direction: column;
+    padding: 2% 0;
+}
+
+.reservarmain__section--ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.reservarmain__section--form {
+    /* justify-items: center; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.reservarmain__form {
+    /* display: flex;
+    flex-direction: column; */
+    width: 50vw;
+    border-style: solid;
+    border-color: gray;
+    border-width: 1px;
+}
+
+.reservarmain__form--div {
+    padding: 3px;
+}
+
+.reservarmain__form label {
+    padding: 1% 0 1% 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.reservarmain__form--checkboxs {
+    padding: 3px;
+}
+
+/* Grid Areas Main */
+
+.ofertasmain__a--2x1 {
+    grid-area: 2x1;
+}
+
+.ofertasmain__a--30off {
+    grid-area: 30off;
+}
+
+.reservarmain__form--nombre {
+    grid-area: nombre;
+}
+
+.reservarmain__form--email {
+    grid-area: email;
+}
+
+.reservarmain__form--celular {
+    grid-area: celular;
+}
+
+.reservarmain__form--cantidad {
+    grid-area: cantidad;
+}
+
+.reservarmain__form--grupo {
+    grid-area: grupo;
+}
+
+.reservarmain__form--f.ingreso {
+    grid-area: ingreso;
+}
+
+.reservarmain__form--f.salida {
+    grid-area: salida;
+}
+
+.reservarmain__form--peticiones {
+    grid-area: peticiones;
+}
+
+.checkboxs-terms {
+    grid-area: terms;
+}
+
+.checkboxs-autoriced {
+    grid-area: autoriced;
+}
+
+.reservarmain__form--b.enviar {
+    grid-area: enviar;
+}
+
+.reservarmain__form--b.limpiar {
+    grid-area: limpiar;
+}
+
+/* Medias Queries Main */
+
+@media (min-width: 768px){
+    .indexmain__div--information {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        color: white;
+        align-self: flex-end;
+        margin-bottom: 3em;
+        margin-left: 3em;
+    }
+
+    .ofertasmain {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "2x1 30off";
+    }
+        
+    .ofertasmain__a {
+        text-decoration: none;
+        color: black;
+        margin: 1em;
+        border-style: solid;
+        border-width: thin;
+    }
+    
+    .ofertasmain__div {
+        padding: 5% 5% 2% 5%;
+    }
+    
+    .ofertasmain__span--title {
+        font-size: 100%;
+        font-weight: 600;
+    }
+    
+    .ofertasmain__span--description {
+        font-size: 70%;
+        margin: 0;
+    }
+
+    /* .reservarmain__form--div {
+        display: grid;
+        border-style: solid;
+        border-color: gray;
+        border-width: 1px;
+        grid-template-columns: 1fr 1fr 1fr;
+        /* grid-template-rows: repeat (6, 50px); */
+    /*    grid-template-areas:
+            "nombre nombre nombre"
+            "email email email"
+            "celular cantidad grupo"
+            "ingreso salida none"
+            "peticiones peticiones peticiones"
+            "terms autoriced none"
+            "enviar limpiar none";
+    } */
+}
+
+/* Fin estilo main */
 
 /* Inicio Estilo Footer */
 
 .footer-container{
     display: flex;
     justify-content: center;
+    font-size: 80%;
 }
 
 .footer__div--bloque1{
@@ -220,37 +474,20 @@ footer ul {
     display: flex;
     flex-direction: column;
     list-style-type: none;
+    padding: 0%;
+}
+
+footer li {
+    display: flex;
+    flex-direction: column;
+    padding: 3%;
 }
 
 footer ul p {
     margin-bottom: 0;
 }
 
-@media (min-width: 768px) {
-    .footer-container {
-    /* width: 100vw; */
-    display: grid;
-    }
-}
-
-@media (min-width: 768px) {
-    .footer__div--container{
-        display: grid;
-        grid-template-columns: auto auto auto auto;
-        grid-template-areas: "bloque1 bloque2 bloque3";
-        column-gap: 5px;
-        justify-items: center;
-        align-items: center;
-    }
-}
-
-@media (max-width: 767px) {
-    .footerlogo {
-        display: none;
-    }
-}
-
-/* Inicio Grid Areas */
+/* Grid Areas footer */
 
 .footer__div--bloque1{
     grid-area: bloque1;
@@ -264,4 +501,53 @@ footer ul p {
     grid-area: bloque3;
 }
 
-/* Fin Grid Areas */
+/* Medias Queries footer */
+
+@media (min-width: 768px) {
+    .footer-container {
+    display: grid;
+    }
+
+    footer div div {
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer__div--container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "bloque1 bloque2 bloque3";
+        column-gap: 5px;
+        align-items: center;
+        justify-items: center;
+    }
+
+    footer li {
+    align-items: left;
+    }
+
+    #maps {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .footerlogo {
+        display: none;
+    }
+    
+    #maps {
+        display: none;
+    }
+
+    footer li {
+    align-items: center;
+    }
+
+    .footer__li--direction {
+        text-align: center;
+    }
+}
+
+/* Fin Estilo footer */
